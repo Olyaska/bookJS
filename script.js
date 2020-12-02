@@ -1,19 +1,19 @@
 'use strict';
-// Восстановить порядок книг.
-const books = document.querySelectorAll('.book');
-const body = document.querySelector('body');
-const headers = document.querySelectorAll('h2 a');
-const adv = document.querySelector('.adv'),
+const books = document.querySelectorAll('.book'),
+    body = document.querySelector('body'),
+    headers = document.querySelectorAll('h2 a'),
+    adv = document.querySelector('.adv'),
     book2Chap = books[0].querySelectorAll('li'),
     book5Chap = books[5].querySelectorAll('li'),
     book6Chap = books[2].querySelectorAll('li');
 
+// Восстановить порядок книг.
 books[0].insertAdjacentElement('beforebegin', books[1]);
 books[3].before(books[4]);
 books[5].after(books[2]);
 
 // Заменить картинку заднего фона на другую из папки image
-body.style.backgroundImage = 'url(./image/you-dont-know-js.jpg)'
+body.style.backgroundImage = 'url(./image/you-dont-know-js.jpg)';
 
 // Исправить заголовок в книге 3( Получится - "Книга 3. this и Прототипы Объектов")
 headers[4].textContent = 'Книга 3. this и Прототипы Объектов';
